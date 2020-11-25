@@ -15,14 +15,6 @@
  
 	cp .env.example .env
 	
-Generate a new application key
-
-	php artisan key:generate
-
-Generate a new JWT authentication secret key
-	
-	php artisan jwt:generate
-	
 Run the database migrations (Set the database connection in .env before migrating/ Change it in Config/Database.php)
 	
 	php artisan migrate
