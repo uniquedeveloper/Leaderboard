@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Employee;
 use DB;
+use Session;
 
 class EmployeeController extends Controller
 {
@@ -36,11 +37,11 @@ class EmployeeController extends Controller
            // validate incoming request
             $validator = Validator::make($request->all(), [
                
-               'points' => 'required'
+               'points' => 'required|numeric|min:0|not_in:0',
            ]);
             
            if ($validator->fails()) {
-                Session::flash('error', $validator->messages()->first());
+                // Session::flash('error', $validator->messages()->first());
                 return redirect()->back()->withInput();
            }
 

@@ -35,7 +35,7 @@
                                 <a @click="deleteEmployee(index)"  class="btn-flat"><i class="material-icons">delete</i></a>
                             </td>
                             <td>
-                            	<a  @click="showUser(index)"> 
+                            	<a  @click="showEmployee(index)"> 
                             		@{{emp['name']}}
                             	</a>
                             </td>
@@ -53,11 +53,11 @@
                 </tbody>
                 
             </table>
-           <a class="btn waves-light btn " @click="addUser()"> Add User </a>
+           <a class="btn waves-light btn " @click="addEmployee()"> Add Employee </a>
            <!-- Modal Structure -->
             <div id="modal1" class="modal">
                 <div class="modal-content">
-                     <h4>Add / Update User</h4>
+                     <h4>Add / Update Employee</h4>
                     <form :action="url" method="POST">
    
                     
@@ -98,7 +98,7 @@
                     M.AutoInit();
                   },
                   methods:{
-                    showUser: function(id=""){
+                    showEmployee: function(id=""){
                         var app = this;
                         app.employee =  app.employees[id];
                         app.url = "employees/new/"+app.employee['id'];
@@ -132,7 +132,7 @@
                         });
                         this.sortEmployees();
                     },
-                    addUser: function(){
+                    addEmployee: function(){
                         var app = this;
                         app.employee = [];
                          app.url = "employees/new/";
