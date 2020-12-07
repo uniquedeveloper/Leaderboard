@@ -152,6 +152,7 @@
                        
                     },
                     updateEmployee: function(employee = []){
+                      console.log(employee)
                     	var app = this;
                     	$.ajax({
                            type:'POST',
